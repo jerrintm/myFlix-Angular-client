@@ -39,11 +39,11 @@ export class DirectorComponent implements OnInit {
   getMovies(): void {
     this.fetchApiData.getMovie(this.data.name).subscribe((resp: any) => {
       this.movie = resp;
-      if (this.movie.director.birthDate) {
-        this.movie.director.birthDate = new Date(this.movie.director.birthDate).toISOString().split('T')[0];
+      if (this.movie.director.Birth) {
+        this.movie.director.Birth = new Date(this.movie.director.Birth).toISOString().split('T')[0];
       }
-      if (this.movie.director.dearthDate) {
-        this.movie.director.dearthDate = new Date(this.movie.director.dearthDate).toISOString().split('T')[0];
+      if (this.movie.director.Death) {
+        this.movie.director.Death = new Date(this.movie.director.Death).toISOString().split('T')[0];
       }
       return this.movie;
     });
